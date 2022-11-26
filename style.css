@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #EFEADF;
+}
+
+.examples {
+    padding: 3rem;
+    max-width: 1200px;
+    display: flex;
+    gap: clamp(2rem, 8vw, 4rem);
+}
+
+.btn-1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.btn-1 .menu {
+    width: 40px;
+    height: 6px;
+    background-color: #212529;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-1 .menu::before,
+.btn-1 .menu::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background-color: #212529;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-1 .menu::before {
+    transform: translateY(-14px);
+}
+
+.btn-1 .menu::after {
+    transform: translateY(14px);
+}
+
+.btn-1.open .menu {
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+
+.btn-1.open .menu::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.btn-1.open .menu::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+.btn-2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-2 .line {
+    width: 40px;
+    height: 6px;
+    background-color: #212529;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-2 .line:nth-child(2)::before,
+.btn-2 .line:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-2.open .line:nth-child(2) {
+    transition-delay: .2s;
+    background-color: transparent;
+}
+
+.btn-2.open .line:nth-child(2)::before {
+    transition-delay: 0.2s;
+    transform: rotateZ(45deg);
+    background-color: #212529;
+}
+
+
+.btn-2.open .line:nth-child(2)::after {
+    transition-delay: 0.2s;
+    transform: rotateZ(-45deg);
+    background-color: #212529;
+}
+
+.btn-2.open .line:nth-child(1) {
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+
+.btn-2.open .line:nth-child(3) {
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+
+.btn-3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-3 .line {
+    width: 40px;
+    height: 6px;
+    background-color: #212529;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-3.open .line:nth-child(2) {
+    width: 0;
+}
+
+.btn-3.open .line:nth-child(1) {
+    transition-delay: .2s;
+    transform: translateY(13px);
+}
+
+.btn-3.open .line:nth-child(3) {
+    transition-delay: .2s;
+    transform: rotateZ(90deg) translateX(-15px);
+}
+
+.btn-3.open {
+    transition-delay: .8s;
+    transform: rotateZ(270deg);
+}
